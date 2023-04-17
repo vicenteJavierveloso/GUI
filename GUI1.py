@@ -11,7 +11,7 @@ class Ventana(QMainWindow):
         self.setWindowTitle(f"GUI 1")
         self.setFixedSize(QSize(200,200))
         #Elementos
-        texto = QLabel(f"Presione el boton para un numero\naleatorio.")
+        texto = QLabel(f"Presiona el boton para un numero\naleatorio.")
         texto.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.numero = QLabel(f"")
         self.numero.setAlignment(Qt.AlignmentFlag.AlignCenter)
@@ -22,9 +22,9 @@ class Ventana(QMainWindow):
         layout.addWidget(texto)
         layout.addWidget(self.numero)
         layout.addWidget(self.boton)
-        ventana = QWidget()
-        ventana.setLayout(layout)
-        self.setCentralWidget(ventana)
+        contenedor = QWidget()
+        contenedor.setLayout(layout)
+        self.setCentralWidget(contenedor)
         
     def numero_aleatorio(self):
         num = random.randint(0, 10)

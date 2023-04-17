@@ -3,7 +3,6 @@
 import sys
 from PyQt6.QtCore import QSize, Qt
 from PyQt6.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QLabel, QPushButton, QWidget, QLineEdit
-import random
 
 class Ventana(QMainWindow):
     def __init__(self):
@@ -11,7 +10,7 @@ class Ventana(QMainWindow):
         self.setWindowTitle(f"GUI 2")
         self.setFixedSize(QSize(200,200))
         #Elementos
-        instruccion = QLabel(f"Ingresa una palabra\nluego presione el boton\npara invertirla.")
+        instruccion = QLabel(f"Ingresa una palabra,\nluego presiona el boton\npara invertirla.")
         instruccion.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.caja_de_texto = QLineEdit()
         self.palabra = QLabel("")
@@ -26,9 +25,9 @@ class Ventana(QMainWindow):
         layout.addWidget(self.palabra)
         layout.addWidget(boton)
         #insertar layout
-        ventana = QWidget()
-        ventana.setLayout(layout)
-        self.setCentralWidget(ventana)
+        contenedor = QWidget()
+        contenedor.setLayout(layout)
+        self.setCentralWidget(contenedor)
 
     def reves(self, palabra):
         aux = ""
